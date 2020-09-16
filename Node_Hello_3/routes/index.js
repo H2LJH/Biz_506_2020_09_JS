@@ -1,13 +1,14 @@
-var express = require('express');
+const express = require('express');
 const moment = require('moment');
-var router = express.Router();
+const router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   
-  let date = moment().format("YYYY-MM-DD-HH:mm:ss");
+  let date = moment().format("YYYY-MM-DD");
+  let time = moment().format('HH:mm:ss');
   let title = '반갑습니다.'
-  res.render('index', { title, date } );
+  res.render('index', { title, date, time } );
 });
 
 module.exports = router;
